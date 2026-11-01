@@ -36,7 +36,7 @@ function Nav() {
             </a>
           ))}
         </div>
-        <a href={`mailto:${PROFILE.email}`} className="btn-gold hidden !px-5 !py-2.5 md:inline-flex">Hire me</a>
+        <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="btn-gold hidden !px-5 !py-2.5 md:inline-flex">Hire me</a>
         <button onClick={() => setOpen(!open)} className="md:hidden" aria-label="Toggle menu">{open ? <X /> : <Menu />}</button>
       </nav>
       <AnimatePresence>
@@ -44,6 +44,7 @@ function Nav() {
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="border-t border-white/10 bg-ink/95 backdrop-blur-xl md:hidden">
             <div className="section-wrap flex flex-col py-4">
               {LINKS.map((l) => <a key={l} href={`#${l}`} onClick={() => setOpen(false)} className="py-3 text-sm tracking-[0.2em] text-zinc-300 uppercase">{l}</a>)}
+              <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" onClick={() => setOpen(false)} className="btn-gold mt-3 justify-center">Hire me on LinkedIn</a>
             </div>
           </motion.div>
         )}
