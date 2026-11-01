@@ -9,18 +9,38 @@ const base = import.meta.env.BASE_URL;
 const img = (p: string) => `${base}${p}`;
 
 /* ---------------------------------- About --------------------------------- */
+const K = "text-violet", STR = "text-emerald-300", P = "text-zinc-300", KEY = "text-cyan", N = "text-gold";
+const CODE: [string, string][][] = [
+  [[K, "const "], [N, "hanzala"], [P, " = {"]],
+  [[KEY, "  role"], [P, ": "], [STR, '"Full Stack AI Developer"'], [P, ","]],
+  [[KEY, "  location"], [P, ": "], [STR, '"Lahore, Pakistan"'], [P, ","]],
+  [[KEY, "  focus"], [P, ": ["], [STR, '"AI agents"'], [P, ", "], [STR, '"RAG"'], [P, ", "], [STR, '"IoT"'], [P, "],"]],
+  [[KEY, "  stack"], [P, ": ["], [STR, '"React"'], [P, ", "], [STR, '"Node.js"'], [P, ", "], [STR, '"Python"'], [P, "],"]],
+  [[KEY, "  ships"], [P, ": "], [STR, '"tests + CI + live demos"'], [P, ","]],
+  [[KEY, "  openToWork"], [P, ": "], [K, "true"], [P, ","]],
+  [[P, "};"]],
+  [],
+  [[K, "await "], [N, "hanzala"], [P, "."], [KEY, "build"], [P, "("], [STR, '"your next product"'], [P, ");"]],
+];
 export function About() {
   return (
     <section id="about" className="section-wrap py-28 sm:py-36">
       <div className="grid items-center gap-16 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
-          <TiltCard max={8} className="mx-auto w-full max-w-md rounded-[2rem]">
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-panel p-3">
-              <img src={img("assets/headshot.webp")} alt="Portrait of Hanzala Saqib" className="aspect-square w-full rounded-[1.5rem] object-cover" />
-              <div className="glass absolute right-6 bottom-6 left-6 flex items-center justify-between rounded-2xl px-5 py-4 [transform:translateZ(40px)]">
-                <div><div className="font-display text-lg font-semibold">{PROFILE.name}</div><div className="text-xs text-mist">{PROFILE.role}</div></div>
-                <Sparkles className="h-5 w-5 text-gold" />
+          <TiltCard max={8} className="mx-auto w-full max-w-lg rounded-3xl">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-panel/90 shadow-2xl shadow-black/50">
+              <div className="flex items-center gap-1.5 border-b border-white/[0.06] px-5 py-3.5">
+                <span className="h-3 w-3 rounded-full bg-red-400/70" /><span className="h-3 w-3 rounded-full bg-amber-300/70" /><span className="h-3 w-3 rounded-full bg-emerald-400/70" />
+                <span className="ml-3 font-mono text-xs text-zinc-500">hanzala.ts</span>
               </div>
+              <pre className="overflow-x-auto p-6 font-mono text-[13px] leading-7">
+                {CODE.map((line, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 + i * 0.07 }}>
+                    <span className="mr-4 inline-block w-5 text-right text-zinc-600 select-none">{i + 1}</span>
+                    {line.map(([cls, text], k) => <span key={k} className={cls}>{text}</span>)}
+                  </motion.div>
+                ))}
+              </pre>
             </div>
           </TiltCard>
         </Reveal>

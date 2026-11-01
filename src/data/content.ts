@@ -6,7 +6,7 @@ export const PROFILE = {
   phone: "+92 306 192 7824",
   github: "https://github.com/hanzalasqb",
   linkedin: "https://www.linkedin.com/in/hanzalasaqib",
-  cv: "assets/Hanzala-Saqib-AI-FullStack-Resume.pdf",
+  cv: "assets/Hanzala-Saqib-Resume.pdf",
 };
 
 export type Category = "ai" | "commerce" | "iot" | "web";
