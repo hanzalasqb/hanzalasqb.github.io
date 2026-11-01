@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute -top-40 right-[-10%] h-[620px] w-[620px] rounded-full bg-gold/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[520px] w-[520px] rounded-full bg-cyan/10 blur-[140px]" />
 
-      <div className="absolute inset-0 lg:left-[38%]">
+      <div className="absolute inset-0 opacity-35 lg:left-[38%] lg:opacity-100">
         <Suspense fallback={null}><Scene3D active={visible} /></Suspense>
       </div>
 
